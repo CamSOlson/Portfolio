@@ -1,6 +1,11 @@
 body{
 	margin: 2rem;
 }
+@media screen and (max-width: 750px){
+	body{
+		margin: 0.5rem;
+	}
+}
 h1,
 h2,
 h3{
@@ -70,4 +75,8 @@ a:hover{
 	color: MediumOrchid;
 	text-decoration: none;
 	border-bottom: 0.2rem solid MediumOrchid;
+}
+ul{
+	margin: 0;
+	padding-left: 3%;
 }
