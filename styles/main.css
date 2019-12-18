@@ -112,21 +112,18 @@ div#reel_images{
 div#reel_images>figure{
 	padding: 0;
 	margin: 1rem;
-	height: 20rem;
-	display: table;
+	max-width: 90vw;
 	text-align: center;
 	transition: 0.25s height, 0.25s margin-top, 0.25s margin-bottom;
 }
 div#reel_images>figure:hover{
-	height: 21rem;
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 }
 div#reel_images>figure>img{
 	margin: 0;
-	height: 17rem;
-	width: auto;
-	display: table-cell;
+	width: 100%;
+	height: auto;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -136,13 +133,10 @@ div#reel_images>figure>figcaption{
 	padding: 0.5rem;
 	font-size: 1rem;
 	margin: 0;
-	display: table-caption;
 	caption-side: bottom;
-	white-space: nowrap;
 	text-align: left;
 	height: 1.5rem;
 	line-height: 1.5rem;
-	margin-top: -2.5rem;
 }
 div#image_selector{
 	height: 1rem;
