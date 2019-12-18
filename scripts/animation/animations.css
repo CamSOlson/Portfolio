@@ -1,0 +1,43 @@
+/*Fade In*/
+@keyframes fadeIn{
+	from	{opacity: 0;}
+	to 		{opacity: 1;}
+}
+.animation.fadeIn{
+	animation-name: fadeIn;
+	animation-duration: 0.5s;
+}
+
+/*Slide In*/
+@keyframes slideInLeft{
+	from {transform: translateX(-100%);}
+	to {transform: translateX(0);}
+}
+.animation.slideInLeft{
+	animation-name: slideInLeft;
+	animation-duration: 0.5s;
+}
+@keyframes slideInRight{
+	from {transform: translateX(100%);}
+	to {transform: translateX(0);}
+}
+.animation.slideInRight{
+	animation-name: slideInRight;
+	animation-duration: 0.5s;
+}
+@keyframes slideInTop{
+	from {transform: translateY(-100%);}
+	to {transform: translateY(0);}
+}
+.animation.slideInTop{
+	animation-name: slideInTop;
+	animation-duration: 0.5s;
+}
+@keyframes slideInBottom{
+	from {transform: translateY(100%);}
+	to {transform: translateY(0);}
+}
+.animation.slideInBottom{
+	animation-name: slideInBottom;
+	animation-duration: 0.5s;
+}

@@ -1,106 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles/main.css">
 		<title>Cameron Olson</title>
-		<link rel="stylesheet" href="media/styles/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">	
+		<script src="scripts/animation/animation.js" type="text/javascript"></script>
 	</head>
 	<body>
-		<header>
+		<header id="header" class="animatable" data-animation="scroll-fadeIn---time-0p5s">
 			<h1>Cameron Olson</h1>
-			<h2>Designer & Software Developer</h2>
-			
-			<section id="contact">
-				<p>Meadville, PA</p>
-				<p>Phone: <a href="tel:8144931591">814-493-1591</a></p>
-				<p>Email: <a href="mailto:camsolson@gmail.com">camsolson@gmail</a></p>
-			</section>
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="bio.html">About</a>
+				<a href="projects.html">Projects</a>
+				<a href="resume.html" target="_blank">Resume</a>
+				<a href="contact.html">Contact</a>
+			</nav>
 		</header>
 		
-		<content>
-			<article id="about">
-				<p>
-				A Game Design & Development student with a blend of practical and artistic capabilities. Knowledgeable in multiple fields of computer and web development. I find unique ways to get
-				a job done efficiently while adding an appreciable amount of creative flare. I will take risks if it means a better outcome. I am capable of working with teams, while also being
-				fully equipped to work solo if needed.
-				</p>
-			</article>
+		<main>
+			<section id="highlights">
+				<div id="image_reel" class="animatable" data-animation="scroll-fadeIn---time-1s">
+					<div id="reel_images" class="animatable" data-animation="scroll-fadeIn---time-1s scroll-slideIn---dir-bottom--time-1s">	
+						<figure>
+							<img src="media/images/2x1.png" alt="2x1 image test">
+							<figcaption>A 2:1 ratio test image</figcaption>
+						</figure>
+					</div>
+						
+					<div id="image_selector" class="animatable" data-animation="scroll-fadeIn---time-1s">
+					</div>
+					<!--<script src="scripts/image_reel.js"></script>-->
+
+				</div>
+			</section>
 			
-			<article id="education">
-				<h1>Education</h1>
-				<ul>
-					<li>Current 2nd Year Game Design and Development major at <a href="https://www.rit.edu/" target="_blank">Rochester Institute of Technology</a></li>
-					<li>3.5 GPA</li>
-					<li>Recipient of the <a href="https://www.rit.edu/admissions/aid/merit-based-scholarships#card-9539" target="_blank">RIT Presidential Scholarship</a></li>
-					<li>Dean's list for 1st semester 2018-2019</li>
-					<li>Expected Graduation: May, 2022</li>
-				</ul>
-			</article>
-			
-			<article id="skills">
-				<h1>Skills</h1>
-				<ul>
-					<li><h2>Computer Science</h2>
-						<ul>
-							<li><h3>Application Development</h3>
-								<ul>
-									<li>Well-versed in several high-level programming languages and frameworks</li>
-										<ul>
-											<li>Java (5+ years of experience)</li>
-											<li>Visual Basic (4+ years of experience)</li>
-											<li>C# and MonoGame (2 years of experience)</li>
-											<li>JavaScript (>1 year of experience)</li>
-											<li>MIT AppInventor (>1 year of experience)</li>
-											<li>Unity 3D (currently learning)</li>
-										</ul>
-								</ul>
-							</li>
-							<li><h3>Web Development</h3>
-								<ul>
-									<li>Able to create rich websites using HTML, CSS, and JavaScript</li>
-									<li>Can set up domains and hosting services</li>
-									<li>Experience with cloud database usage and management</li>
-								</ul>								
-							</li>
-						</ul>
-					</li>
-					<li><h2>Engineering</h2>
-						<ul>
-							<li><a href="https://www.solidworks.com/sw/support/796_ENU_HTML.htm" target="_blank"><abbr title="Certified SolidWorks Associate">CSWA</abbr></a>-certified 
-								in <a href="https://www.solidworks.com/" target="_blank">SolidWorks</a></li>
-							<li>Experience with hand-drawing diagrams and professional drafts</li>
-							<li>2+ years of experience with machining, electronics, and robotics
-								<ul>
-									<li>Champion of the 2016 <a href="https://gonrl.org/about/national-competition/" target="_blank"><abbr title="National Robotics League">NRL</abbr> National 
-									Competition</a></li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li><h2>Design and Modeling</h2>
-						<ul>
-							<li>Well-versed in the use of <a href="https://www.blender.org/" target="_blank">Blender</a> for creation of 3D models and assets</li>
-							<li>Experience drawing and animating using tools such as <a href="https://www.adobe.com/products/photoshop" target="_blank">Photoshop</a> and 
-								<a href="https://krita.org" target="_blank">Krita</a></li>
-						</ul>
-					</li>
-				</ul>
-			</article>
-			
-			<article id="experience">
-				<h1>Experience and Projects</h1>
-				<ul>
-					<li>Created the website for <a href="https://www.smithmillsinn.com/" target="_blank">SmithMillsInn.com</a>, an Airbnb inn</li>
-					<li>Designed and assisted in the creation of "Juggernaut," the winning battle robot of the 2016 <a href="https://gonrl.org/about/national-competition/" target="_blank"><abbr title="National Robotics League">NRL</abbr> 
-						National Competition</a></li>
-					<li>Built <a href="https://github.com/CamSOlson/DrCannoli" target="_blank">DrCannoli</a>, a team project for a programming course with C# and MonoGame</li>
-					<li>Currently building a realistic <a href="https://github.com/CamSOlson/3D-Sam" target="_blank">3D model of a friend</a></li>
-				</ul>
-			</article>
-		</content>
+			<content>
+				<article>
+					<h1 class="animatable" data-animation="scroll-fadeIn---time-0p5s scroll-slideIn---dir-left">Creativity Meets Tech</h1>
+					<section  class="animatable" data-animation="scroll-fadeIn---time-1s">
+						<h2>Unique Solutions for Unique Problems</h2>
+						<p>Every problem has a set of solutions; some are good, some are bad, and some are so crazy and different that they work perfectly. I tend to find those last ones. A common solution might work, but it could probably work better, be more suited to the problem, or maybe you just need something <i>new</i>. Every situation deserves to be considered special, and I will find an answer tailored to it, because when one size fits all, it never fits good.</p>
+						<p>What does it mean to be a creative problem solver? For me, it means that novel approaches are the ones you can make work best, and each solution is a work of art. It means that it isn't good enough to simply get something done, there needs to be something to set it apart and draw attention to it. It means making connections to other problems, taking inspiration from places you didn't expect or things that might not have worked before.</p>
+					</section>
+					<section  class="animatable" data-animation="scroll-fadeIn---time-1s">
+						<h2>More than One Tool for the Job</h2>
+						<p>Multitools are great, but often a 2 inch knife doesn't cut right, and the tiny pliers can't reach around the thing you need to... ply? I believe that no tool can be good at everything, so it's to everyone's advantage if you have many different ones.</p>
+						<article class="blocks">
+							<section class="animatable" data-animation="scroll-slideIn---dir-bottom--time-0p5s">
+								<h2>Programming</h2>
+								<p>Speaking computer, and in multiple dialects, is crucial in a technology-driven world. Experience with Java, C#, VisualBasic, JavaScript, and others means that I can work my way around software and make something not just functional, but optimal.</p>
+							</section>
+							<section class="animatable" data-animation="scroll-slideIn---dir-bottom--time-0p5s">
+								<h2>3D Modeling</h2>
+								<p>Games, simulations, movies, and rendering need high-quality, functional models. Whether it be efficient yet pleasing game assets or high poly animation meshes, I know what to do. Using programs like <a href="https://www.blender.org/", target="_blank">Blender</a> and Maya, 3D art or design is a specialty.</p>
+							</section>
+							<section class="animatable" data-animation="scroll-slideIn---dir-bottom--time-0p5s">
+								<h2>Web Design</h2>
+								<p>Using HTML5 and CSS, along with JavaScript and PHP, I create modern, functional, and responsive sites. Each design is custom made for its specific use case, alleviating unnecessary fluff and dependencies that plague web templates and site builders.</p>
+							</section>
+							<section class="animatable" data-animation="scroll-slideIn---dir-bottom--time-0p5s">
+								<h2>CADD</h2>
+								<p>With a <a href="https://www.solidworks.com/sw/support/796_ENU_HTML.htm" target="_blank"><abbr title="Certified SolidWorks Associate">CSWA</abbr></a> certification, I am capable of using computer design software, especially <a href="https://www.solidworks.com/" target="_blank">SolidWorks</a>, to design and build functional, production-ready models, or digitally create objects from existing schematics and plans.</p>
+							</section>
+						</article>
+						<p>Be sure to check out my <a href="resume.html" target="_blank">Resume</a> for more information.</p>
+					</section>
+				</article>
+			</content>
+		</main>
 		
+		<footer>
+			<a>© Cameron Olson, 2019-2020</a>
+		</footer>
 	</body>
 </html>
