@@ -12,6 +12,7 @@
 	<body>
 		<header id="header" class="animatable" data-animation="scroll-fadeIn---time-0p5s">
 			<h1>Cameron Olson</h1>
+			<a class="nav_dropdown"></a>
 			<nav>
 				<a href="/">Home</a>
 				<a href="/bio/">About</a>
@@ -24,25 +25,28 @@
 		<main>
 			<section id="highlights">
 				<div id="image_reel" class="animatable" data-animation="scroll-fadeIn---time-1s">
-					<div id="reel_images" class="animatable" data-animation="scroll-fadeIn---time-1s scroll-slideIn---dir-bottom--time-1s">	
-						<figure class="reel_image">
-							<img src="media/images/Unity Cave.png" alt="Unity Cave">
-							<figcaption>Unity Development and Environment Design</figcaption>
-						</figure>
-						<figure class="reel_image hidden">
-							<img src="media/images/orchid render.png" alt="3D Orchid">
-							<figcaption>3D Game Props and Rendering</figcaption>
-						</figure>
-						<figure class="reel_image hidden">
-							<img src="media/images/Glass Chess Set.png" alt="Glass Chess Render">
-							<figcaption>Material and Setup Rendering</figcaption>
-						</figure>
-						<figure class="reel_image hidden">
-							<img src="media/images/Tile Top Off.png" alt="Simple Web Game">
-							<figcaption>Web Games and Interactive Experiences</figcaption>
-						</figure>
+					<div id="display" class="animatable" data-animation="scroll-fadeIn---time-1s scroll-slideIn---dir-bottom--time-1s">
+						<a id="left_img_button">⯇</a>
+						<div id="viewport">	
+							<figure class="reel_image">
+								<img src="media/images/Unity Cave.png" alt="Unity Cave">
+								<figcaption>Unity Development and Environment Design</figcaption>
+							</figure>
+							<figure class="reel_image hidden">
+								<img src="media/images/orchid render.png" alt="3D Orchid">
+								<figcaption>3D Game Props and Rendering</figcaption>
+							</figure>
+							<figure class="reel_image hidden">
+								<img src="media/images/Glass Chess Set.png" alt="Glass Chess Render">
+								<figcaption>Material and Setup Rendering</figcaption>
+							</figure>
+							<figure class="reel_image hidden">
+								<img src="media/images/Tile Top Off.png" alt="Simple Web Game">
+								<figcaption>Web Games and Interactive Experiences</figcaption>
+							</figure>
+						</div>
+						<a id="right_img_button">⯈</a>
 					</div>
-						
 					<div id="image_selector" class="animatable" data-animation="scroll-fadeIn---time-1s"></div>
 					<script src="scripts/image_reel.js"></script>
 				</div>

@@ -9,6 +9,8 @@ body{
 	
 	display: flex;
 	flex-direction: column;
+	
+	overflow-x: hidden;
 }
 h1, h2{
 	font-family: 'Muli', sans-serif;
@@ -21,22 +23,25 @@ header{
 	margin: 0;
 	padding: 0;
 	position: fixed;
-	height: 5rem;
+	height: 3rem;
 	background-color: Black;
-	width: 100vw;
+	width: 100%;
 	display: flex;
+	flex-direction: row;
 	align-items: center;
+	justify-content: middle;
 }
 header>h1{
-	border-left: 3rem solid MediumSlateBlue;
-	padding-left: 1rem;
+	border-left: 1rem solid MediumSlateBlue;
+	padding-left: 0.5rem;
 	height: 100%;
 	margin: 0;
 	color: AliceBlue;
-	line-height: 5rem;
 	font-family: 'Muli', sans-serif;
-	font-size: 2rem;
+	font-size: 1rem;
 	font-weight: bold;
+	display: flex;
+	align-items: center;
 }
 footer{
 	background-color: Black;
@@ -49,27 +54,10 @@ footer{
 }
 nav{
 	margin-left: auto;
-	margin-right: 3rem;
-}
-nav>a{
-	color: AliceBlue;
-	border-right: 0.75rem solid MediumSlateBlue;
-	padding-right: 0.5rem;
-	margin-left: 1rem;
-	height: 3rem;
-	font-size: 1.5rem;
-	font-family: 'Muli', sans-serif;
-	transition: 0.25s border-right, 0.25s margin-left, 0.25s margin-right;
-	text-decoration: none;
-}
-nav>a:hover{
-	border-right: 2.25rem solid MediumSlateBlue;
-	margin-left: 0.25rem;
-	margin-right: -0.75rem;
 }
 main{
 	margin: 0;
-	padding: 5rem 0 0 0;
+	padding: 3rem 0 0 0;
 	flex-basis: 100%;
 	flex-grow: 2;
 }
@@ -80,8 +68,8 @@ content{
 }
 section#highlights{
 	z-index: 1;
-	min-height: calc(100vh - 5rem);
-	width: auto;
+	min-height: calc(100vh - 3rem);
+	width: 100%;
 	background-color: Black;
 	margin: 0;
 	margin-bottom: 0rem;
@@ -91,6 +79,35 @@ section#highlights{
 	align-items: center;
 	overflow: hidden;
 }
+div#display{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+a.img_nav_button{
+	transition: 0.25s opacity;
+	z-index: 3;
+	font-size: 5rem;
+	font-weight: bold;
+	min-height: calc(100vh - 10rem - 5rem);
+	width: 5rem;
+	color: White;
+	opacity: 0.1;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	user-select: none;
+}
+a.img_nav_button:hover{
+	opacity: 0.5;
+}
+a.img_nav_button.left{
+	margin-right: 0;
+}
+a.img_nav_button.right{
+	margin-left: 0;
+}
 div#image_reel{
 	min-height: calc(100vh - 10rem);
 	width: 100%;
@@ -98,9 +115,9 @@ div#image_reel{
 	flex-direction: column;
 	align-items: center;
 }
-div#reel_images{
+div#viewport{
 	min-height: calc(100vh - 10rem - 5rem);
-	width: 100%;
+	width: calc(100% - 10rem);
 	overflow: hidden;
 	margin: 0;
 	display: flex;
@@ -109,17 +126,17 @@ div#reel_images{
 	justify-content: center;
 	align-items: center;
 }
-div#reel_images>figure{
+div#viewport>figure{
 	display: block;
 	height: calc(100vh - 10rem - 8rem);
-	width: calc(100vw - 2rem);
+	width: calc(100vw - 12rem);
 	transition: 0.15s opacity;
 	object-fit: contain;
 	position: absolute;
 	margin: 0;
 	padding: 0;
 }
-div#reel_images>figure>img{
+div#viewport>figure>img{
 	object-fit: contain;
 	margin: 0;
 	width: 100%;
@@ -127,7 +144,7 @@ div#reel_images>figure>img{
 	margin-left: auto;
 	margin-right: auto;
 }
-div#reel_images>figure>figcaption{
+div#viewport>figure>figcaption{
 	color: AliceBlue;
 	font-size: 1rem;
 	margin: 0;
@@ -168,7 +185,6 @@ article{
 	flex-direction: column;
 }
 article>h1{
-	/*background-image: linear-gradient(to right, rgba(0, 0, 128, 0.1), rgba(0, 0, 0, 0));*/
 	border-left: 3rem solid MediumSlateBlue;
 	font-size: 3rem;
 	line-height: 4rem;
@@ -223,6 +239,44 @@ a{
 }
 a.visited{
 	color: MediumSlateBlue;
+}
+
+/*Desktop*/
+@media only screen and (min-width: 600px){
+	header{
+		height: 5rem;
+		align-items: center;
+	}
+	header>h1{
+		border-left: 3rem solid MediumSlateBlue;
+		padding-left: 1rem;
+		font-size: 2rem;
+	}
+	nav{
+		margin-right: 3rem;
+	}
+	nav>a{
+		color: AliceBlue;
+		border-right: 0.75rem solid MediumSlateBlue;
+		padding-right: 0.5rem;
+		margin-left: 1rem;
+		font-size: 1.5rem;
+		font-family: 'Muli', sans-serif;
+		transition: 0.25s border-right, 0.25s margin-left, 0.25s margin-right;
+		text-decoration: none;
+	}
+	nav>a:hover{
+		border-right: 2.25rem solid MediumSlateBlue;
+		margin-left: 0.25rem;
+		margin-right: -0.75rem;
+	}
+	main{
+		padding: 5rem 0 0 0;
+	}
+	section#highlights{
+		z-index: 1;
+		min-height: calc(100vh - 5rem);
+	}
 }
 
 
