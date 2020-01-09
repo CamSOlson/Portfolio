@@ -18,8 +18,6 @@ h1, h2{
 }
 header{
 	z-index: 5;
-	top: 0;
-	left: 0;
 	margin: 0;
 	padding: 0;
 	position: fixed;
@@ -43,6 +41,15 @@ header>h1{
 	display: flex;
 	align-items: center;
 }
+nav{
+	margin-left: auto;
+	display: flex;
+	max-height: 3rem;
+}
+nav>a{
+	font-size: 0.5rem;
+	margin: 0;
+}
 footer{
 	background-color: Black;
 	margin-top: auto;
@@ -51,9 +58,6 @@ footer{
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-}
-nav{
-	margin-left: auto;
 }
 main{
 	margin: 0;
@@ -127,19 +131,22 @@ div#viewport{
 	align-items: center;
 }
 div#viewport>figure{
-	display: block;
 	height: calc(100vh - 10rem - 8rem);
 	width: calc(100vw - 12rem);
-	transition: 0.15s opacity;
+	transition: 0.25s opacity, 0.25s visibility;
 	object-fit: contain;
 	position: absolute;
 	margin: 0;
 	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 div#viewport>figure>img{
 	object-fit: contain;
 	margin: 0;
-	width: 100%;
+	max-width: calc(100vw - 12rem);
 	height: calc(100% - 1.5rem);
 	margin-left: auto;
 	margin-right: auto;
@@ -207,14 +214,6 @@ article>section>p{
 	text-indent: 3rem;
 	margin: 0.5rem;
 }
-article>section img{
-	object-fit: contain;
-	max-width: 80%;
-	max-height: 50rem;
-	width: 100%;
-	height: 100%;
-	align-self: center;
-}
 /*block article*/
 article.blocks{
 	display: flex;
@@ -241,11 +240,27 @@ a.visited{
 	color: MediumSlateBlue;
 }
 
+/*Mini gallery*/
+div.mini_gallery{
+	object-fit: contain;
+	width: 90%;
+	align-self: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+div.mini_gallery>img{
+	transition: 0.25s margin;
+	height: 15rem;
+	margin: 1rem;
+}
+
 /*Desktop*/
 @media only screen and (min-width: 600px){
 	header{
 		height: 5rem;
-		align-items: center;
 	}
 	header>h1{
 		border-left: 3rem solid MediumSlateBlue;
@@ -277,10 +292,16 @@ a.visited{
 		z-index: 1;
 		min-height: calc(100vh - 5rem);
 	}
+	div.mini_gallery>img:hover{
+		margin: 0.5rem 1rem 1.5rem 1rem;
+	}
 }
 
-
+img.clickable:not(.hidden) {
+	cursor: pointer;
+}
 
 .hidden{
 	opacity: 0;
+	visibility: hidden;
 }

@@ -8,6 +8,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">	
 		<script src="../scripts/animation/animation.js" type="text/javascript"></script>
+		<script src="../scripts/view_image.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<header id="header" class="animatable" data-animation="scroll-fadeIn---time-0p5s">
@@ -23,21 +24,25 @@
 		</header>
 		
 		<main>
-			<article>
+			<article id="web_projects">
 				<h1 class="animatable" data-animation="scroll-fadeIn---time-0p5s scroll-slideIn---dir-left">Web Projects</h1>
 				<section  class="animatable" data-animation="scroll-fadeIn---time-1s">
 					<h2>Smith Mills Inn</h2>
 					<p>A quaint, historic inn deserves recognition. This website showcases this piece of the early days of America, with displays of rooms and amenities, and convenient links to book on AirBnB.</p>
 					<a href="https://www.smithmillsinn.com" target="_blank">https://www.smithmillsinn.com</a>
 					<br>
-					<img src="../media/images/Smith Mills Inn.png" alt="Smith Mills Inn">
+					<div class="mini_gallery">
+						<img src="../media/images/Smith Mills Inn.png" alt="Smith Mills Inn" class="clickable">
+					</div>
 				</section>
 				<section  class="animatable" data-animation="scroll-fadeIn---time-1s">
 					<h2>Tile Top Off</h2>
 					<p>Web games are a neat and convenient way to kill some time without waiting for downloads or finding out something isn't available on your device. This simple game is easy to play and requires no special downloads or apps on any device with a web browser.</p>
-					<a href="https://people.rit.edu/users/cso7654/235/project3/" target="_blank">Tile Top Off</a>
+					<a href="https://www.tiletopoff.com" target="_blank">Tile Top Off</a>
 					<br>
-					<img src="../media/images/Tile Top Off.png" alt="Tile Top Off">
+					<div class="mini_gallery">
+						<img src="../media/images/Tile Top Off.png" alt="Tile Top Off" class="clickable">
+					</div>
 				</section>
 				<section  class="animatable" data-animation="scroll-fadeIn---time-1s">
 					<h2>Gif Finder</h2>
@@ -45,7 +50,10 @@
 					<p>Disclaimer: I own no images or names on this site</p>
 					<a href="https://people.rit.edu/users/cso7654/235/project2/" target="_blank">Gif Finder</a>
 					<br>
-					<img src="../media/images/Gif Finder.png" alt="Gif Finder">
+					<div class="mini_gallery">
+						<img src="../media/images/Gif Finder.png" alt="Gif Finder" class="clickable">
+						<img src="../media/images/Gif Finder Home.png" alt="Gif Finder Start Page" class="clickable">
+					</div>
 				</section>
 				
 			</article>

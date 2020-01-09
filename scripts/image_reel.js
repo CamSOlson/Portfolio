@@ -1,12 +1,17 @@
-var imgReel = document.querySelector("div#image_reel");
-var display = document.querySelector("div#display");
-var imgs = document.querySelectorAll("figure.reel_image");
-var imgSelector = document.querySelector("div#image_selector");
+var imgReel;
+var display;
+var imgs;
+var imgSelector;
 var imgSelectorButtons = [];
 var activeImage = 0;
 
 //Get all images and store them, and generate the bubbles on the selection bar
-window.onload = function() {
+window.addEventListener('DOMContentLoaded',	function() {
+	imgReel = document.querySelector("div#image_reel");
+	display = document.querySelector("div#display");
+	imgs = document.querySelectorAll("figure.reel_image");
+	imgSelector = document.querySelector("div#image_selector");
+	
 	//Add left and right buttons
 	let leftBtn = document.querySelector("a#left_img_button");
 	leftBtn.classList.add("img_nav_button");
@@ -49,7 +54,7 @@ window.onload = function() {
 		imgSelector.appendChild(selector);
 		imgSelectorButtons.push(selector);
 	}
-}
+});
 
 function updateImages(){
 	if (activeImage < 0){
