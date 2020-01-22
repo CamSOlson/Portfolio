@@ -101,8 +101,8 @@ function updateImages(){
 
 function swipedetect(e, callback){
 	var touchsurface = e, swipedir, startX, startY, distX, distY, elapsedTime, startTime,
-	threshold = 100, //min dist
-	restraint = 100, //max deviation
+	threshold = 50, //min dist
+	restraint = 50, //max deviation
 	allowedTime = 300; //max time
 	var swipeHandle = callback || function(swipedir){};
   
