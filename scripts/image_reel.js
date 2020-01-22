@@ -4,6 +4,7 @@ var imgs;
 var imgSelector;
 var imgSelectorButtons = [];
 var activeImage = 0;
+var swipeObjects;
 
 //Get all images and store them, and generate the bubbles on the selection bar
 window.addEventListener('DOMContentLoaded',	function() {
@@ -54,6 +55,28 @@ window.addEventListener('DOMContentLoaded',	function() {
 		imgSelector.appendChild(selector);
 		imgSelectorButtons.push(selector);
 	}
+
+	//Set up swipe support
+	swipeObjects = document.querySelectorAll("figure.reel_image>img");
+
+	for (let swipeObject of swipeObjects){
+		if (swipeObject !== undefined){
+			swipedetect(swipeObject, function(swipedir){
+				if (swipedir != "none"){
+					switch (swipedir){
+						case "left":
+							rightBtn.click();
+							break;
+						case "right":
+							leftBtn.click();
+							break;
+					}
+				}
+			});
+		}
+	}
+
+
 });
 
 function updateImages(){
@@ -74,4 +97,50 @@ function updateImages(){
 			imgs[i].classList.remove("hidden");
 		}
 	}
+}
+
+function swipedetect(e, callback){
+	var touchsurface = e, swipedir, startX, startY, distX, distY, elapsedTime, startTime,
+	threshold = 100, //min dist
+	restraint = 100, //max deviation
+	allowedTime = 300; //max time
+	var swipeHandle = callback || function(swipedir){};
+  
+	touchsurface.addEventListener("touchstart", function(e){
+		let touchobj = e.changedTouches[0];
+		swipedir = "none";
+		dist = 0;
+		startX = touchobj.pageX;
+		startY = touchobj.pageY;
+		startTime = new Date().getTime();
+	});
+  
+	touchsurface.addEventListener("touchmove", function(e){
+		let touchobj = e.changedTouches[0];
+		distX = touchobj.pageX - startX;
+		distY = touchobj.pageY - startY;
+	
+		if (Math.abs(distX) > Math.abs(distY) && e.cancelable){
+			e.preventDefault();
+		}
+	});
+  
+	touchsurface.addEventListener("touchend", function(e){
+		let touchobj = e.changedTouches[0];
+		distX = touchobj.pageX - startX;
+		distY = touchobj.pageY - startY;
+		elapsedTime = new Date().getTime() - startTime;
+		if (elapsedTime <= allowedTime){
+			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
+				swipedir = (distX < 0) ? "left" : "right";
+			}
+		}
+		swipeHandle(swipedir);
+		if (e.cancelable){
+			e.preventDefault();
+		}
+		if (Math.abs(distX) <= 1 && Math.abs(distY) <= 1){
+			e.target.click();
+		}
+	}, false);
 }
