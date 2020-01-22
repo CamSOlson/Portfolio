@@ -139,7 +139,7 @@ function swipedetect(e, callback){
 		if (e.cancelable){
 			e.preventDefault();
 		}
-		if (Math.abs(distX) <= 1 && Math.abs(distY) <= 1){
+		if (Math.abs(distX) <= 5 && Math.abs(distY) <= 5){
 			e.target.click();
 		}
 	}, false);
