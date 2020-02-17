@@ -5,6 +5,7 @@ var imgSelector;
 var imgSelectorButtons = [];
 var activeImage = 0;
 var swipeObjects;
+var swipeObj;
 
 //Get all images and store them, and generate the bubbles on the selection bar
 window.addEventListener('DOMContentLoaded',	function() {
@@ -57,25 +58,19 @@ window.addEventListener('DOMContentLoaded',	function() {
 	}
 
 	//Set up swipe support
-	swipeObjects = document.querySelectorAll("figure.reel_image>img");
-
-	for (let swipeObject of swipeObjects){
-		if (swipeObject !== undefined){
-			swipedetect(swipeObject, function(swipedir){
-				if (swipedir != "none"){
-					switch (swipedir){
-						case "left":
-							rightBtn.click();
-							break;
-						case "right":
-							leftBtn.click();
-							break;
-					}
-				}
-			});
-		}
+	swipeObj = document.querySelector("section#highlights");
+	if (swipeObj !== undefined){
+		swipedetect(swipeObj, function(swipedir){
+			switch (swipedir){
+				case "left":
+					rightBtn.click();
+					break;
+				case "right":
+					leftBtn.click();
+					break;
+			}
+		});
 	}
-
 
 });
 
@@ -136,11 +131,8 @@ function swipedetect(e, callback){
 			}
 		}
 		swipeHandle(swipedir);
-		if (e.cancelable){
-			e.preventDefault();
-		}
-		if (Math.abs(distX) <= 5 && Math.abs(distY) <= 5){
-			e.target.click();
-		}
+		// if (Math.abs(distX) <= 5 && Math.abs(distY) <= 5){
+		// 	e.target.click();
+		// }
 	}, false);
 }
