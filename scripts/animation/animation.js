@@ -114,6 +114,8 @@ function createSlideIn(args){
 	let toY = "0";
 	
 	switch(args["dir"].toLowerCase()){
+		default:
+			break;
 		case "top":
 			fromX = "0";
 			fromY = "-100";
@@ -137,8 +139,6 @@ function createSlideIn(args){
 			fromX = "-100";
 			fromY = "100";
 			break;
-		default:
-			break;
 		case "topleft":
 			fromX = "-100"
 			fromY = "-100";
@@ -148,5 +148,5 @@ function createSlideIn(args){
 	let name = "slideIn-dir-" + args["dir"];
 	
 	return {"name": name,
-			"data": "@keyframes " + name + "{from{transform: translate(" + fromX + "%, " + fromY + "%);} to{transform: translate(" + toX + "%, " + toY + "%);}}"};
+			"data": "@keyframes " + name + "{from{transform: translate(" + fromX + "vw, " + fromY + "vh);} to{transform: translate(" + toX + "vw, " + toY + "vh);}}"};
 }
