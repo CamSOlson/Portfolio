@@ -1,78 +1,78 @@
-var imgReel;
-var display;
-var imgs;
-var imgSelector;
-var imgSelectorButtons = [];
-var activeImage = 0;
-var swipeObjects;
-var swipeObj;
+let imgReel, display, imgs, imgSelector;
+let imgSelectorButtons = [];
+let activeImage = 0;
+let swipeObjects, swipeObj;
 
 //Get all images and store them, and generate the bubbles on the selection bar
-window.addEventListener('DOMContentLoaded',	function() {
-	imgReel = document.querySelector("div#image_reel");
-	display = document.querySelector("div#display");
-	imgs = document.querySelectorAll("figure.reel_image");
-	imgSelector = document.querySelector("div#image_selector");
-	
-	//Add left and right buttons
-	let leftBtn = document.querySelector("a#left_img_button");
-	leftBtn.classList.add("img_nav_button");
-	leftBtn.classList.add("left");
-	leftBtn.onclick = function(){
-		activeImage--;
-		updateImages();
-	};
-
-	let rightBtn = document.querySelector("a#right_img_button");
-	rightBtn.classList.add("img_nav_button");
-	rightBtn.classList.add("right");
-	rightBtn.onclick = function() {
-		activeImage++;
-		updateImages();
-	}
-	
-	//Set up individual images and selector
-	for (let i = 0; i < imgs.length; i++){
-		let selector = document.createElement("a");
-		selector.classList.add("image_selector_button");
-		selector.dataset.index = i;
-		if (!imgs[i].classList.contains("hidden")){
-			selector.classList.add("active");
-			activeImage = i;
-		}
-		selector.onclick = function(){
-			imgs[i].classList.remove("hidden");
-			for (let hideI = 0; hideI < imgs.length; hideI++){
-				if (hideI !== i){
-					imgs[hideI].classList.add("hidden");
+function init(){
+	if (document.querySelector("div#image_reel") != undefined){
+		window.addEventListener('DOMContentLoaded',	function() {
+			imgReel = document.querySelector("div#image_reel");
+			display = document.querySelector("div#display");
+			imgs = document.querySelectorAll("figure.reel_image");
+			imgSelector = document.querySelector("div#image_selector");
+			
+			//Add left and right buttons
+			let leftBtn = document.querySelector("a#left_img_button");
+			leftBtn.classList.add("img_nav_button");
+			leftBtn.classList.add("left");
+			leftBtn.onclick = function(){
+				activeImage--;
+				updateImages();
+			};
+		
+			let rightBtn = document.querySelector("a#right_img_button");
+			rightBtn.classList.add("img_nav_button");
+			rightBtn.classList.add("right");
+			rightBtn.onclick = function() {
+				activeImage++;
+				updateImages();
+			}
+			
+			//Set up individual images and selector
+			for (let i = 0; i < imgs.length; i++){
+				let selector = document.createElement("a");
+				selector.classList.add("image_selector_button");
+				selector.dataset.index = i;
+				if (!imgs[i].classList.contains("hidden")){
+					selector.classList.add("active");
+					activeImage = i;
 				}
+				selector.onclick = function(){
+					imgs[i].classList.remove("hidden");
+					for (let hideI = 0; hideI < imgs.length; hideI++){
+						if (hideI !== i){
+							imgs[hideI].classList.add("hidden");
+						}
+					}
+					for (let btn of imgSelectorButtons){
+						btn.classList.remove("active");
+					}
+					activeImage = event.target.dataset.index;
+					event.target.classList.add("active");
+				};
+				imgSelector.appendChild(selector);
+				imgSelectorButtons.push(selector);
 			}
-			for (let btn of imgSelectorButtons){
-				btn.classList.remove("active");
+		
+			//Set up swipe support
+			swipeObj = document.querySelector("section#highlights");
+			if (swipeObj !== undefined){
+				swipeDetect(swipeObj, function(swipedir){
+					switch (swipedir){
+						case "left":
+							rightBtn.click();
+							break;
+						case "right":
+							leftBtn.click();
+							break;
+					}
+				});
 			}
-			activeImage = event.target.dataset.index;
-			event.target.classList.add("active");
-		};
-		imgSelector.appendChild(selector);
-		imgSelectorButtons.push(selector);
-	}
-
-	//Set up swipe support
-	swipeObj = document.querySelector("section#highlights");
-	if (swipeObj !== undefined){
-		swipedetect(swipeObj, function(swipedir){
-			switch (swipedir){
-				case "left":
-					rightBtn.click();
-					break;
-				case "right":
-					leftBtn.click();
-					break;
-			}
+		
 		});
 	}
-
-});
+}
 
 function updateImages(){
 	if (activeImage < 0){
@@ -94,17 +94,18 @@ function updateImages(){
 	}
 }
 
-function swipedetect(e, callback){
-	var touchsurface = e, swipedir, startX, startY, distX, distY, elapsedTime, startTime,
+function swipeDetect(e, callback){
+	let touchsurface = e, swipedir, startX, startY, distX, distY, elapsedTime, startTime,
 	threshold = 50, //min dist
 	restraint = 50, //max deviation
 	allowedTime = 300; //max time
-	var swipeHandle = callback || function(swipedir){};
+	let swipeHandle = callback || function(swipedir){};
   
 	touchsurface.addEventListener("touchstart", function(e){
 		let touchobj = e.changedTouches[0];
 		swipedir = "none";
-		dist = 0;
+		distX = 0;
+		distY = 0;
 		startX = touchobj.pageX;
 		startY = touchobj.pageY;
 		startTime = new Date().getTime();
@@ -136,3 +137,5 @@ function swipedetect(e, callback){
 		// }
 	}, false);
 }
+
+export {init, updateImages, swipeDetect};

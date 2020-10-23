@@ -1,20 +1,20 @@
-var animStyle = document.createElement("style");
-var currentStyles = [];
-var currentKeyframes = [];
-var scrollElems = [];
+let animStyle = document.createElement("style");
+let currentStyles = [], currentKeyframes = [], scrollElems = [];
 
 //Add decoder to load
-window.addEventListener('DOMContentLoaded',	function() {
-	let elems = document.querySelectorAll(".animatable");
-	for (let elem of elems){
-		decodeStyles(elem);
-	}
-	document.head.appendChild(animStyle);
-	
-	scrollElems = document.querySelectorAll(".animatable");
-	addScrollListeners();
-	scrollInit();
-});
+function init(){
+	window.addEventListener('DOMContentLoaded',	function() {
+		let elems = document.querySelectorAll(".animatable");
+		for (let elem of elems){
+			decodeStyles(elem);
+		}
+		document.head.appendChild(animStyle);
+		
+		scrollElems = document.querySelectorAll(".animatable");
+		addScrollListeners();
+		scrollInit();
+	});
+}
 
 //Scroll-activated animations
 	function addScrollListeners() {
@@ -150,3 +150,5 @@ function createSlideIn(args){
 	return {"name": name,
 			"data": "@keyframes " + name + "{from{transform: translate(" + fromX + "vw, " + fromY + "vh);} to{transform: translate(" + toX + "vw, " + toY + "vh);}}"};
 }
+
+export {init, decodeStyles};
