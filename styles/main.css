@@ -15,6 +15,8 @@ body{
 	flex-direction: column;
 	
 	overflow-x: hidden;
+
+	color: Black;
 }
 h1, h2{
 	font-family: 'Muli', sans-serif;
@@ -272,6 +274,10 @@ article.blocks>section{
 	padding-right: 0.5rem;
 	flex-basis: 15rem;
 	flex-grow: 1;
+}
+article.blocks img{
+	width: 5rem;
+	height: 5rem;
 }
 
 a, a.visited{

@@ -8,24 +8,17 @@
 		<link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">	
 		<script src="../scripts/main.js" type="module"></script>
+		<script src="https://camsolson.github.io/jsa/jsa.js"></script>
 	</head>
 	<body>
 		<main>
 			<article id="web_projects">
-				<h1 class="animatable" data-animation="scroll-fadeIn---time-0p5s scroll-slideIn---dir-left">Web Projects</h1>
-				<section class="animatable" data-animation="scroll-fadeIn---time-0p5s scroll-slideIn---dir-bottom--time-1s">
-					<h2>Smith Mills Inn</h2>
-					<p>A quaint, historic inn deserves recognition. This website showcases this piece of the early days of America, with displays of rooms and amenities, and convenient links to book on AirBnB.</p>
-					<a class="project-link" href="https://www.smithmillsinn.com" target="_blank">Visit Smith Mills Inn</a>
-					<a class="project-link" href="https://github.com/CamSOlson/SmithMillsInnWebsite" target="_blank">View on GitHub</a>
-					<br>
-					<div class="mini_gallery">
-						<img src="../media/images/Smith Mills Inn.png" alt="Smith Mills Inn" class="clickable">
-					</div>
-				</section>
-				<section class="animatable" data-animation="scroll-fadeIn---time-0p5s scroll-slideIn---dir-bottom--time-1s">
+				<h1 data-animation="fade(scroll, 1s, 0s); slide(scroll, 0.5s, 0s, left); ">Web Projects</h1>
+				<section data-animation="fade(scroll, 1s, 0s); slide(scroll, 0.5s, 0s, up);">
 					<h2>Tile Top Off</h2>
-					<p>Web games are a neat and convenient way to kill some time without waiting for downloads or finding out something isn't available on your device. This simple game is easy to play and requires no special downloads or apps on any device with a web browser.</p>
+					<p>Web games are a neat and convenient way to kill some time without waiting for downloads or finding out something isn't available on your 
+						device. This simple game is easy to play and requires no special downloads or apps on any device with a web browser. It is also a 
+						Progressive Web App, meaning it can be installed on your device and accessed without an internet connection.</p>
 					<a class="project-link" href="https://www.tiletopoff.com" target="_blank">Visit Tile Top Off</a>
 					<a class="project-link" href="https://github.com/CamSOlson/Tile-Top-Off" target="_blank">View on GitHub</a>
 					<br>
@@ -33,9 +26,10 @@
 						<img src="../media/images/Tile Top Off.png" alt="Tile Top Off" class="clickable">
 					</div>
 				</section>
-				<section class="animatable" data-animation="scroll-fadeIn---time-0p5s scroll-slideIn---dir-bottom--time-1s">
+				<section data-animation="fade(scroll, 1s, 0s); slide(scroll, 0.5s, 0s, up);">
 					<h2>Gif Finder</h2>
-					<p>An exercise for a web class, this site provides a minimalistic way to find gifs using <a href="https://giphy.com/" target="_blank">GIPHY</a>.</p>
+					<p>An exercise for a web class, this site provides a minimalistic way to find gifs using 
+						<a href="https://giphy.com/" target="_blank">GIPHY</a>.</p>
 					<p>Disclaimer: I own no images or names on this site</p>
 					<a class="project-link" href="https://people.rit.edu/users/cso7654/235/project2/" target="_blank">Visit Gif Finder</a>
 					<br>
@@ -44,7 +38,69 @@
 						<img src="../media/images/Gif Finder Home.png" alt="Gif Finder Start Page" class="clickable">
 					</div>
 				</section>
-				
+				<section data-animation="fade(scroll, 1s, 0s); slide(scroll, 0.5s, 0s, up);">
+					<h2>Audio Visualizer</h2>
+					<p>Using the Web Audio API built into JavaScript, this web page allows users to upload, play, and visualize data of audio files or
+						stream audio from their microphones in real time. It also features an intuitive equalizer to adjust the volume of certain frequencies.
+					</p>
+					<a class="project-link" href="https://people.rit.edu/cso7654/330/project-2/" target="_blank">Visit the Audio Visualizer</a>
+					<br>
+					<div class="mini_gallery">
+						<img src="../media/images/Audio Visualizer.png" alt="Audio Visualizer" class="clickable">
+						<img src="../media/images/Audio Visualizer Eq.png" alt="Audio Visualizer Equalizer" class="clickable">
+					</div>
+				</section>
+				<section data-animation="fade(scroll, 1s, 0s); slide(scroll, 0.5s, 0s, up);">
+					<h2>Smith Mills Inn</h2>
+					<p>A quaint, historic inn deserves recognition. This website showcases this piece of the early days of America, with displays of rooms 
+						and amenities, and convenient links to book on AirBnB.</p>
+					<a class="project-link" href="https://www.smithmillsinn.com" target="_blank">Visit Smith Mills Inn</a>
+					<a class="project-link" href="https://github.com/CamSOlson/SmithMillsInnWebsite" target="_blank">View on GitHub</a>
+					<br>
+					<div class="mini_gallery">
+						<img src="../media/images/Smith Mills Inn.png" alt="Smith Mills Inn" class="clickable">
+					</div>
+				</section>
+			</article>
+
+			<article id="graphics_projects">
+				<h1 data-animation="fade(scroll, 1s, 0s); slide(scroll, 0.5s, 0s, left);">Computer Graphics</h1>
+				<section data-animation="fade(scroll, 1s, 0s); slide(scroll, 0.5s, 0s, up);">
+					<h2>Vulkan Renderer/Engine</h2>
+					<p>Vulkan is the modern-era offering from the developers of OpenGL, and offers cross-platform capabilities, multi-threaded processing, 
+						and extremely precise manipulation of graphics hardware. Also present is a 3D real-time physics engine, allowing interactions between 
+						objects and their environment. This is a work in progress, and is the result of my personal dive into Vulkan via its Java bindings, 
+						making this a truly cross-platform application.</p>
+					<!-- <a class="project-link" href="https://people.rit.edu/users/cso7654/235/project2/" target="_blank">Visit Gif Finder</a> -->
+					<br>
+					<!-- <div class="mini_gallery">
+						<img src="../media/images/Gif Finder.png" alt="Gif Finder" class="clickable">
+						<img src="../media/images/Gif Finder Home.png" alt="Gif Finder Start Page" class="clickable">
+					</div> -->
+				</section>
+				<section data-animation="fade(scroll, 1s, 0s); slide(scroll, 0.5s, 0s, up);">
+					<h2>Direct3D 11 Renderer</h2>
+					<p>Capable of high performance graphics for Windows and the XBox consoles, Direct3D 11 (part of DirectX 11) is often used in videogames and
+						 other programs on PCs. This project was the result of a graphics course and features 3D models, lighting, normal maps, and other 
+						 features.</p>
+					<!-- <a class="project-link" href="https://www.tiletopoff.com" target="_blank">Visit Tile Top Off</a>
+					<a class="project-link" href="https://github.com/CamSOlson/Tile-Top-Off" target="_blank">View on GitHub</a> -->
+					<br>
+					<!-- <div class="mini_gallery">
+						<img src="../media/images/Tile Top Off.png" alt="Tile Top Off" class="clickable">
+					</div> -->
+				</section>
+				<section data-animation="fade(scroll, 1s, 0s); slide(scroll, 0.5s, 0s, up);">
+					<h2>OpenGL Renderer</h2>
+					<p>One of the most ubiquitous graphics libraries out there, OpenGL works on just about everything. This was a quick personal lesson to see 
+						what I could make with the library, rendering scenes 3D models, lights, and cameras.</p>
+					<!-- <a class="project-link" href="https://www.smithmillsinn.com" target="_blank">Visit Smith Mills Inn</a>
+					<a class="project-link" href="https://github.com/CamSOlson/SmithMillsInnWebsite" target="_blank">View on GitHub</a> -->
+					<br>
+					<!-- <div class="mini_gallery">
+						<img src="../media/images/Smith Mills Inn.png" alt="Smith Mills Inn" class="clickable">
+					</div> -->
+				</section>				
 			</article>
 		</main>
 		
