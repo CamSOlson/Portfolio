@@ -6,7 +6,7 @@ function init(){
 		nav = document.querySelector("nav");
 		navToggle = document.querySelector("a#nav_toggle");
 		navToggle.onclick = function(){
-			if (document.documentElement.clientWidth < 600){
+			if (document.documentElement.clientWidth < 750){
 				if (nav.classList.contains("open")){
 					nav.classList.remove("open");
 				}else{

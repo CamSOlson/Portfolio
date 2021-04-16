@@ -5,7 +5,7 @@ function init(){
 		let header = document.createElement("header");
 		header.id = "header";
 		header.classList.add("animatable");
-		header.dataset.animation = "scroll-fadeIn---time-0p5s";
+		header.dataset.animation = "fade(scroll, 0.5s, 0s);";
 
 		let title = document.createElement("a");
 		title.href = "../";

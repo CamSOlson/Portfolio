@@ -7,7 +7,7 @@ body{
 	padding: 0;
 	margin: 0;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 1.25rem;
+	font-size: 1rem;
 	min-height: 100vh;
 	
 	display: flex;
@@ -82,7 +82,8 @@ nav>a:not(#nav_toggle){
 }
 nav.open>a:not(#nav_toggle){
 	opacity: 1;
-	height: 3rem;
+	height: 2rem;
+	line-height: 2rem;
 	visibility: visible;
 }
 nav>a#nav_toggle{
@@ -137,10 +138,10 @@ div#display{
 }
 a.img_nav_button{
 	z-index: 3;
-	font-size: 1rem;
+	font-size: 3rem;
 	font-weight: bold;
 	min-height: calc(100vh - 15rem);
-	width: 1rem;
+	width: 3rem;
 	color: White;
 	opacity: 0.25;
 	cursor: pointer;
@@ -162,7 +163,7 @@ div#image_reel{
 	align-items: center;
 }
 div#viewport{
-	min-height: calc(100vh - 15rem);
+	min-height: calc(100vh - 10rem);
 	width: calc(100% - 2rem);
 	overflow: hidden;
 	margin: 0;
@@ -173,8 +174,8 @@ div#viewport{
 	align-items: center;
 }
 div#viewport>figure{
-	height: calc(100vh - 18rem);
-	width: calc(100vw - 2rem);
+	height: calc(100vh - 12rem);
+	width: calc(100vw - 6rem);
 	transition: 0.25s opacity, 0.25s visibility;
 	object-fit: contain;
 	position: absolute;
@@ -188,7 +189,7 @@ div#viewport>figure{
 div#viewport>figure>img{
 	object-fit: contain;
 	margin: 0;
-	max-width: calc(100vw - 2rem);
+	max-width: calc(100vw - 6rem);
 	max-height: calc(100% - 1.5rem);
 	margin-left: auto;
 	margin-right: auto;
@@ -202,7 +203,7 @@ div#viewport>figure>figcaption{
 	height: 1.5rem;
 }
 div#image_selector{
-	margin: auto 1rem 1rem 1rem;
+	margin: 1rem 1rem 1rem 1rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -221,10 +222,22 @@ a.image_selector_button{
 }
 a.image_selector_button.active{
 	border-width: 0.25rem;
-	width: 0.9rem;
-	height: 0.9rem;
-	margin: 0 0.025rem 0 0.025rem;
+	width: 0.75rem;
+	height: 0.75rem;
+	margin: 0 0.125rem 0 0.125rem;
 }
+/* a.image_selector_button{
+	height: 2rem;
+	width: 2rem;
+	margin: 0 0.5rem 0 0.5rem;
+}
+a.image_selector_button.active{
+	border-width: 0.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0 0.25rem 0 0.25rem;
+} */
+
 /*regular article*/
 article{
 	margin: 0.5rem;
@@ -233,7 +246,7 @@ article{
 }
 article h1{
 	border-left: 1rem solid MediumSlateBlue;
-	font-size: 1.75rem;
+	font-size: 1.5rem;
 	line-height: 2rem;
 	padding-left: 0.5rem;
 	color: Black;
@@ -245,7 +258,7 @@ article>section{
 	flex-direction: column;
 }
 article>section>h2{
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	color: MediumSlateBlue;
 	margin: 1rem;
 }
@@ -358,7 +371,7 @@ img#resume{
 */
 
 /*Large mobile/tablet*/
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 750px){
 	iframe.resume{
 		width: calc(100vw - 4rem);
 		height: calc(100vh - 12rem);
@@ -430,7 +443,7 @@ img#resume{
 	}
 	div#image_selector{
 		height: 2rem;
-		margin: auto 1rem 1rem 1rem;
+		margin: 1rem 1rem 1rem 1rem;
 		padding: 0 1rem 0 1rem;
 	}
 	div#viewport{
